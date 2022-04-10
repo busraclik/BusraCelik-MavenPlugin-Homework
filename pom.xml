@@ -4,8 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
-
+<!--here is some basics like groupId, artifactId and version-->
     <groupId>org.example</groupId>
     <artifactId>example-maven-plugin-counsdependenct</artifactId>
     <packaging>maven-plugin</packaging>
@@ -14,8 +13,7 @@
     <name>counter-maven-plugin Maven Mojo</name>
     <url>http://maven.apache.org</url>
 
-
-
+<!--here is the dependencies that we need-->
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -33,9 +31,7 @@
             <artifactId>maven-project</artifactId>
             <version>2.2.1</version>
         </dependency>
-
     </dependencies>
-
 
 
     <build>
@@ -45,10 +41,10 @@
                 <groupId>org.example</groupId>
                 <artifactId>example-maven-plugin-counsdependenct</artifactId>
                 <version>1.0-SNAPSHOT</version>
-
                 <executions>
                     <execution>
                         <goals>
+                            <!-- this is the important part (the goal). the mojo name in the mojo class-->
                             <goal>dependency-counter</goal>
                         </goals>
                         <phase>validate</phase>
@@ -60,7 +56,6 @@
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.6.4</version>
             </plugin>
-
         </plugins>
         </pluginManagement>
     </build>
